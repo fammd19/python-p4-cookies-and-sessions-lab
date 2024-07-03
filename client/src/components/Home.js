@@ -11,6 +11,10 @@ function Home() {
       .then(setArticles);
   }, []);
 
+  function clearData() {
+    fetch("/clear")
+  }
+
   return (
     <main>
       {articles.map((article) => {
@@ -27,6 +31,7 @@ function Home() {
           </article>
         );
       })}
+      <p onClick={clearData}>Click here to clear</p>
     </main>
   );
 }
